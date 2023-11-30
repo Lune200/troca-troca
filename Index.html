@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troca de Imagem</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        button {
+            cursor: pointer;
+            padding: 10px;
+            font-size: 16px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Troca de Imagem</h1>
+    <button onclick="trocarImagem()">Trocar Imagem</button>
+<img id="imagem" src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Fennec_Fox.jpg" alt="Imagem 1">
+ 
+    <script>
+        let contadorImagem = 1;
+ 
+        function trocarImagem() {
+            const imagem = document.getElementById('imagem');
+            contadorImagem = (contadorImagem % 2) + 1;
+imagem.src = (contadorImagem === 1) ? 'https://upload.wikimedia.org/wikipedia/commons/9/9c/Fennec_Fox.jpg' : 'https://guiaanimal.net/uploads/article/image/1184/raposa.png';
+            imagem.alt = `Imagem ${contadorImagem}`;
+        }
+    </script>
+</body>
+</html>
